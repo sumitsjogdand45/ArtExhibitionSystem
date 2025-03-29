@@ -14,8 +14,6 @@ namespace ArtExhibitionSystem.Domain
         public DateTime ArtistBirthdate { get; set; }
         public string ArtistPhone { get; set; }
         public ICollection<Artworks> Artworks { get; set; }
-
-
         public ICollection<Galleries> Galleries { get; set; }
 
     }
