@@ -1,5 +1,4 @@
 ﻿using ArtExhibitionSystem.application.Interfaces;
-using ArtExhibitionSystem.domain;
 using ArtExhibitionSystem.Domain;
 using ArtExhibitionSystem.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
@@ -50,7 +49,17 @@ namespace ArtExhibitionSystem.Infrastructure.Repository
             return artists;
         }
 
+        //DeleteArtist
+        public async Task<bool> DeleteArtist(int artistId)
+        {
+            var del = await GetArtistById(artistId);
+            if (del is not null)
+            {
+                _artDbContext.Artists.Remove(del);
+                return await _artDbContext.SaveChangesAsync() > 0;
+            }
+            return false;
+        }
         
-
     }
 }

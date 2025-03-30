@@ -9,7 +9,7 @@ namespace ArtExhibitionSystem.application.Interfaces
         Task<Artists> AddArtists(Artists artist);
         Task<Artists> GetArtistById(int artistId);
         Task<Artists> UpdateArtist(Artists  artists);
-        Task<Artists> DeleteArtist(int artistId);
+        Task<bool> DeleteArtist(int artistId);
 
 
     }

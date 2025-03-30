@@ -1,4 +1,6 @@
 ﻿using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.AddArtist;
+using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.DeleteArtist;
+using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.RemoveArtwork;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.UpdateArtist;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetAllArtists;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetArtistById;
@@ -54,9 +56,19 @@ namespace ArtExhibitionSystem.API.Controllers
             return Ok(result);
         }
 
+        //deleteArtist
+        [HttpDelete]
+
+        public async Task<IActionResult> DeleteArtist(int artistId)
+        {
+            var result = await _mediatoR.Send(new DeleteArtistCommand(artistId));
+            return Ok(result);
+        }
+      
 
 
 
-        
+
+
     }
 }
