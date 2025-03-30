@@ -1,6 +1,4 @@
-﻿
-
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using ArtExhibitionSystem.domain;
 namespace ArtExhibitionSystem.Domain
 {
@@ -13,8 +11,8 @@ namespace ArtExhibitionSystem.Domain
         public string ArtistName { get; set; }
         public DateTime ArtistBirthdate { get; set; }
         public string ArtistPhone { get; set; }
-        public ICollection<Artworks> Artworks { get; set; }
-        public ICollection<Galleries> Galleries { get; set; }
+        public ICollection<Artworks>? Artworks { get; set; }
+        public ICollection<Galleries>? Galleries { get; set; }
 
     }
 }

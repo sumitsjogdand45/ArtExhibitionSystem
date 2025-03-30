@@ -9,7 +9,7 @@ namespace ArtExhibitionSystem.application.Interfaces
         Task<Artworks> GetArtworkByIdAsync(int artworkId);
         Task<Artworks> UpdateArtworkAsync(Artworks artwork);
         Task<bool> RemoveArtworkAsync(int artworkId);
-        Task<List<Artworks>> SearchArtworksAsync(string keyword);
+       // Task<List<Artworks>> SearchArtworksAsync(string keyword);
 
     }
 

@@ -1,3 +1,4 @@
+using ArtExhibitionSystem.application.Interfaces;
 using ArtExhibitionSystem.Application;
 using ArtExhibitionSystem.Infrastructure;
 namespace ArtExhibitionSystem.API
@@ -9,14 +10,16 @@ namespace ArtExhibitionSystem.API
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddApplicationServices();
             // Add services to the container.
-             builder.Services.AddInterfaceServices(builder.Configuration);
+
+            builder.Services.AddInterfaceServices(builder.Configuration);
+           
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+            var app = builder.Build(); 
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

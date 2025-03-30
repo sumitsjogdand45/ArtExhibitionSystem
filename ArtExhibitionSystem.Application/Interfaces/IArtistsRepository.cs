@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtExhibitionSystem.domain;
+﻿using ArtExhibitionSystem.domain;
+using ArtExhibitionSystem.Domain;
 
 namespace ArtExhibitionSystem.application.Interfaces
 {
     public interface IArtistsRepository
     {
-       // Task<IEnumerable<Artworks>>GetAllArtwork();
+        Task<IEnumerable<Artists>>GetAllArtists();
+        Task<Artists> AddArtists(Artists artist);
+        Task<Artists> GetArtistById(int artistId);
+        Task<Artists> UpdateArtist(Artists  artists);
+        Task<Artists> DeleteArtist(int artistId);
+
+
     }
 }

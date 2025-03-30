@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtExhibitionSystem.Domain;
+﻿using ArtExhibitionSystem.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -17,14 +12,18 @@ namespace ArtExhibitionSystem.Infrastructure.Configuration
                 new Artists
                 {
                     ArtistID = 1,
-                    ArtistName = "Sumit",ArtistPhone=""
+                    ArtistName = "Sumit",
+                    ArtistPhone = "100",
+                    ArtistBirthdate = new DateTime(2000,5,8)
                     
+
                 },
                  new Artists
                  {
                      ArtistID = 2,
                      ArtistName = "Kapil",
-                     ArtistPhone=""
+                     ArtistPhone = "95456188188",
+                     ArtistBirthdate = new DateTime(2001, 02, 05)
                  });
         }
     }

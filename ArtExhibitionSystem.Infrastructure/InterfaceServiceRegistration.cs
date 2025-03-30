@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace ArtExhibitionSystem.Infrastructure
 {
     public static class InterfaceServiceRegistration
@@ -18,6 +19,8 @@ namespace ArtExhibitionSystem.Infrastructure
 
             });
             services.AddScoped<IArtworkRepository, ArtworksRepository>();
+            services.AddScoped<IFavoriteArtWorkRepository, FavouriteArtWorkRepository>();
+            services.AddScoped<IArtistsRepository, ArtistsRepository>();
             return services;
 
         }
