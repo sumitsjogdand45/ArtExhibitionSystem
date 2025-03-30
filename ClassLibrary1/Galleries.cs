@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace ArtExhibitionSystem.domain
     public class Galleries
     { 
         [Key]
-        [Required]
+        [Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int GalleryId { get; set; }
         [Required]
         public string Name { get; set; }
@@ -23,7 +24,7 @@ namespace ArtExhibitionSystem.domain
         public int ArtistId { get; set; }
 
         // Navigation Properties
-        public Artists Artists { get; set; }
-        public ICollection<ArtworkGallery> ArtworkGalleries { get; set; }
+        public Artists? Artists { get; set; }
+        public ICollection<ArtworkGallery>? ArtworkGalleries { get; set; }
     }
 }

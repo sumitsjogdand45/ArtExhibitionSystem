@@ -1,5 +1,4 @@
 ﻿using ArtExhibitionSystem.domain;
-using ArtExhibitionSystem.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -18,7 +17,7 @@ namespace ArtExhibitionSystem.Infrastructure.Context
                     CreationDate = DateTime.Now,
                     Description = "horse Painting",
                     ArtistId = 1,
-                   //  Artists
+                    //  Artists
                     ImageURL = "sdfqr"
 
                 });

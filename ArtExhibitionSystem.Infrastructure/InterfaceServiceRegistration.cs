@@ -21,6 +21,7 @@ namespace ArtExhibitionSystem.Infrastructure
             services.AddScoped<IArtworkRepository, ArtworksRepository>();
             services.AddScoped<IFavoriteArtWorkRepository, FavouriteArtWorkRepository>();
             services.AddScoped<IArtistsRepository, ArtistsRepository>();
+            services.AddScoped<IGalleriesRepository, GalleriesRepository>();
             return services;
 
         }

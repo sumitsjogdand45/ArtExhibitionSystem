@@ -17,5 +17,7 @@ namespace ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetAllArt
            var allArtists= await _artworkRepository.GetAllArtwork();
             return allArtists;
         }
+
+
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtExhibitionSystem.domain;
+﻿using ArtExhibitionSystem.domain;
 using ArtExhibitionSystem.Domain;
 using ArtExhibitionSystem.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +16,7 @@ namespace ArtExhibitionSystem.Infrastructure.Context
         {
             modelBuilder.ApplyConfiguration(new ArtistsConfiguration());
             modelBuilder.ApplyConfiguration(new ArtworkConfiguration());
+            modelBuilder.ApplyConfiguration(new GalleriesConfiguration());
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Artists> Artists { get; set; }

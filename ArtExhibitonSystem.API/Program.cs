@@ -1,4 +1,3 @@
-using ArtExhibitionSystem.application.Interfaces;
 using ArtExhibitionSystem.Application;
 using ArtExhibitionSystem.Infrastructure;
 namespace ArtExhibitionSystem.API
