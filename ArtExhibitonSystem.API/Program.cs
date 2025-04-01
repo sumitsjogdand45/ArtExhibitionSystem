@@ -1,5 +1,6 @@
 using ArtExhibitionSystem.Application;
 using ArtExhibitionSystem.Infrastructure;
+using ArtExhibitionSystem.Identity;
 namespace ArtExhibitionSystem.API
 {
     public class Program
@@ -11,7 +12,7 @@ namespace ArtExhibitionSystem.API
             // Add services to the container.
 
             builder.Services.AddInterfaceServices(builder.Configuration);
-           
+            builder.Services.AddIdentityServices(builder.Configuration);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

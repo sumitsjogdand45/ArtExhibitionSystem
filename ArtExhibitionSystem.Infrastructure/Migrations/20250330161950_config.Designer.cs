@@ -4,6 +4,7 @@ using ArtExhibitionSystem.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArtExhibitionSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(ArtDBContext))]
-    partial class ArtDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250330161950_config")]
+    partial class config
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,7 +155,7 @@ namespace ArtExhibitionSystem.Infrastructure.Migrations
                         {
                             ArtworkId = 1,
                             ArtistId = 1,
-                            CreationDate = new DateTime(2025, 4, 1, 12, 57, 6, 782, DateTimeKind.Local).AddTicks(6464),
+                            CreationDate = new DateTime(2025, 3, 30, 21, 49, 48, 346, DateTimeKind.Local).AddTicks(716),
                             Description = "horse Painting",
                             ImageURL = "sdfqr",
                             Title = "Painting"
