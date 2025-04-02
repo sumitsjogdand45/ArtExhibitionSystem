@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArtExhibitionSystem.Domain;
 
 namespace ArtExhibitionSystem.application.Interfaces
 {
-    public class IArtworkGalleryRepository
+    public interface IArtworkGalleryRepository
     {
+        Task<ArtworkGallery> AddArtworkGallery(ArtworkGallery artworkGallery);
+
+        
     }
 }

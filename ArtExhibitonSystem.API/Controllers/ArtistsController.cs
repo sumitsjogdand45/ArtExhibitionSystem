@@ -5,7 +5,6 @@ using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetAllArtists
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetArtistById;
 using ArtExhibitionSystem.Domain;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtExhibitionSystem.API.Controllers
