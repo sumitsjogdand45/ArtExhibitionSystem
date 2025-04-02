@@ -1,17 +1,18 @@
 ﻿using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.AddArtist;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.DeleteArtist;
-using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.RemoveArtwork;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Command.UpdateArtist;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetAllArtists;
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetArtistById;
 using ArtExhibitionSystem.Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtExhibitionSystem.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class ArtistsController : ControllerBase
     {
         readonly IMediator _mediatoR;
@@ -21,8 +22,8 @@ namespace ArtExhibitionSystem.API.Controllers
         }
 
         //GetAllArtists
-
-        [HttpGet]
+       
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllArtists()
         {
             var allartists = await _mediatoR.Send(new GetAllArtistsQuery());

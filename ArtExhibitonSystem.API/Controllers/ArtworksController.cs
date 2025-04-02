@@ -5,12 +5,14 @@ using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetAllArtwork
 using ArtExhibitionSystem.Application.Features.ArtistFeature.Query.GetArtworkByIdQuery;
 using ArtExhibitionSystem.domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtExhibitionSystem.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ArtworksController : ControllerBase
     {
         readonly IMediator _mediatoR;

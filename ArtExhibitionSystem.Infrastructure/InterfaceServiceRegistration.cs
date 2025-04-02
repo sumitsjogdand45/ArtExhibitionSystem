@@ -1,4 +1,6 @@
 ﻿using ArtExhibitionSystem.application.Interfaces;
+using ArtExhibitionSystem.Application.Interfaces.Identity;
+using ArtExhibitionSystem.Identity.Services;
 using ArtExhibitionSystem.Infrastructure.Context;
 using ArtExhibitionSystem.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +24,8 @@ namespace ArtExhibitionSystem.Infrastructure
             services.AddScoped<IFavoriteArtWorkRepository, FavouriteArtWorkRepository>();
             services.AddScoped<IArtistsRepository, ArtistsRepository>();
             services.AddScoped<IGalleriesRepository, GalleriesRepository>();
+            services.AddScoped<IAuthService, AuthService>();
+
             return services;
 
         }

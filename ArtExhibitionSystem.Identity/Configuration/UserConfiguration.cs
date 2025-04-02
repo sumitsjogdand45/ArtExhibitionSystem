@@ -14,17 +14,18 @@ namespace ArtExhibitionSystem.Identity.Configuration
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
-            var hasher =new PasswordHasher<ApplicationUser>();
+            var hasher = new PasswordHasher<ApplicationUser>();
             builder.HasData(
                 new ApplicationUser
                 {
                     Id = "41776062 - 6086 - 1fbf - b923 - 2879a6680b9a",
-                    Email="admin@gmail.com",
-                    NormalizedEmail="ADMIN@GMAIL.COM",
-                    FirstName="Admin",
-                    LastName="system",
-                    NormalizedUserName= "admin@gmail.com",
-                    PasswordHash=hasher.HashPassword(null,"Admin@123")
+                    Email = "admin@gmail.com",
+                    NormalizedEmail = "ADMIN@GMAIL.COM",
+                    FirstName = "Admin",
+                    LastName = "system",
+                    NormalizedUserName = "admin@gmail.com",
+                    UserName = "admin@gmail.com",
+                    PasswordHash = hasher.HashPassword(null, "Admin@123")
                 },
                 new ApplicationUser
                 {
@@ -34,6 +35,7 @@ namespace ArtExhibitionSystem.Identity.Configuration
                     FirstName = "sunny",
                     LastName = "Jogdand",
                     NormalizedUserName = "sunny@gmail.com",
+                    UserName = "sunny@gmail.com",
                     PasswordHash = hasher.HashPassword(null, "Sunny@123")
                 }
             );

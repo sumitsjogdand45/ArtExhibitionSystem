@@ -9,7 +9,7 @@ namespace ArtExhibitionSystem.Application.Interfaces.Identity
 {
     public interface IAuthService
     {
-        Task<AuthRequest> Login(AuthRequest authRequest);
-        Task<AuthRequest> Register(RegistrationRequest registrationRequest);
+        Task<AuthResponse> Login(AuthRequest authRequest);
+        Task<RegistrationResponse> Register(RegistrationRequest registrationRequest);
     }
 }

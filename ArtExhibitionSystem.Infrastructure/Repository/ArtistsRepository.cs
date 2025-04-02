@@ -12,7 +12,7 @@ namespace ArtExhibitionSystem.Infrastructure.Repository
 
         public ArtistsRepository(ArtDBContext artDbContext)
         {
-            _artDbContext=artDbContext;
+            _artDbContext=artDbContext; 
         }
 
        //getallartists

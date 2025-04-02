@@ -14,6 +14,7 @@ namespace ArtExhibitionSystem.API
             builder.Services.AddInterfaceServices(builder.Configuration);
             builder.Services.AddIdentityServices(builder.Configuration);
 
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -29,7 +30,7 @@ namespace ArtExhibitionSystem.API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
