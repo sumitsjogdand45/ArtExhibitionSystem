@@ -17,6 +17,8 @@ namespace ArtExhibitionSystem.Infrastructure.Context
             modelBuilder.ApplyConfiguration(new ArtistsConfiguration());
             modelBuilder.ApplyConfiguration(new ArtworkConfiguration());
             modelBuilder.ApplyConfiguration(new GalleriesConfiguration());
+            modelBuilder.ApplyConfiguration(new ArtworkGalleryConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Artists> Artists { get; set; }

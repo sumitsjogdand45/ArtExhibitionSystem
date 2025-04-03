@@ -14,6 +14,8 @@ namespace ArtExhibitionSystem.Infrastructure
     {
         public static IServiceCollection AddInterfaceServices(this IServiceCollection services, IConfiguration configuration)
         {
+            
+
             services.AddDbContext<ArtDBContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("ArtWebAPIConnString"));
@@ -25,10 +27,11 @@ namespace ArtExhibitionSystem.Infrastructure
             services.AddScoped<IArtistsRepository, ArtistsRepository>();
             services.AddScoped<IGalleriesRepository, GalleriesRepository>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IArtworkGalleryRepository, ArtWorkGalleryRepository>();
 
             return services;
 
         }
     }
-   
+
 }

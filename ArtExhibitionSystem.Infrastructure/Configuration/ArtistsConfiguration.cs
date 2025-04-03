@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ArtExhibitionSystem.Infrastructure.Configuration
 {
-    internal class ArtistsConfiguration : IEntityTypeConfiguration<Artists>
+    public class ArtistsConfiguration : IEntityTypeConfiguration<Artists>
     {
         public void Configure(EntityTypeBuilder<Artists> builder)
         {
