@@ -12,7 +12,7 @@ namespace ArtExhibitionSystem.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   // [Authorize]
     public class ArtworksController : ControllerBase
     {
         readonly IMediator _mediatoR;

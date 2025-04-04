@@ -16,6 +16,7 @@ namespace ArtExhibitionSystem.API.Controllers
         }
         [HttpPost("login")]
         public async Task<ActionResult<AuthResponse>>Login(AuthRequest authRequest)
+        
         {
             var response=await _authService.Login(authRequest);
             return Ok(response);
