@@ -33,16 +33,19 @@ namespace ArtExhibitionSystem.Identity.Services
                 throw new NotFoundException($"user with email {authRequest.Email} not exist");
             }
             var userPassword =await  _signInManger.CheckPasswordSignInAsync(user, authRequest.Password, false);
-
-            JwtSecurityToken jwtSecurityToken =await  GenerateToken(user);
-            var response = new AuthResponse
+            if (userPassword.Succeeded)
             {
-                Id = user.Id,
-                Email = user.Email,
-                UserName = user.UserName,
-                Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken)
-            };
-            return response;
+                JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
+                var response = new AuthResponse
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    UserName = user.UserName,
+                    Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken)
+                };
+                return response;
+            }
+            return null;
         }
 
         private async Task< JwtSecurityToken> GenerateToken(ApplicationUser user)

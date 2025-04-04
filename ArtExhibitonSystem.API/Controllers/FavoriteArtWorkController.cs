@@ -2,7 +2,9 @@
 using ArtExhibitionSystem.Application.Features.FavArtworkFeature.Command;
 using ArtExhibitionSystem.Application.Features.FavArtworkFeature.Command.RemovfavartworkFeatue;
 using ArtExhibitionSystem.Application.Features.FavArtworkFeature.Query.GetByIDFeature;
+using ArtExhibitionSystem.Identity.Model;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtExhibitionSystem.API.Controllers
@@ -12,10 +14,12 @@ namespace ArtExhibitionSystem.API.Controllers
     public class FavoriteArtWorkController : ControllerBase
     {
         readonly IMediator _mediatoR;
+        readonly UserManager<ApplicationUser> _userManager;
 
-        public FavoriteArtWorkController(IMediator mediator)
+        public FavoriteArtWorkController(IMediator mediator, UserManager<ApplicationUser> userManager)
         {
             _mediatoR = mediator;
+            _userManager = userManager;
         }
 
         //GetAllFavoriteArtwork
@@ -27,9 +31,11 @@ namespace ArtExhibitionSystem.API.Controllers
         }
 
         //AddArtworkToFavorite
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> AddArtworkToFavorite(int userId, int artworkId)
         {
+            //var userid = User.FindFirst("uid")?.Value;
+          
             var result = await _mediatoR.Send(new FavouriteArtworkCommand(userId, artworkId));
             return Ok(result);
 

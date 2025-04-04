@@ -16,6 +16,8 @@ namespace ArtExhibitionSystem.domain
         public string ImageURL { get; set; }
         [Required]
         public int ArtistId { get; set; }
+
+        [ForeignKey("ArtistId")]
         public Artists? Artists { get; set; }
 
         public ICollection<FavoriteArtWork>? FavoriteArtWork { get; set; }  
