@@ -16,10 +16,6 @@ namespace ArtExhibitionSystem.Identity
                 options.UseSqlServer(configuration.GetConnectionString("ArtWebAPIConnString")));
             services.AddIdentity<ApplicationUser, IdentityRole>().
             AddEntityFrameworkStores <ArtAppIdentityDbContext>().AddDefaultTokenProviders();
-
-
-
-
             return services;
         }
     }

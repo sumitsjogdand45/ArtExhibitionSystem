@@ -64,7 +64,7 @@ namespace ArtExhibitionSystem.Identity.Services
             }
             .Union(userClaims)
             .Union(roleClaims);
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("asdfghdsdfgfdsdfggfghgfdsdfghgfdfghgfdfg                                                            "));
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sjsjsjssdfghjkjhgfddffjjsjsjsjs"));
             var signingCredentials=new SigningCredentials(symmetricSecurityKey,SecurityAlgorithms.HmacSha256);
             var jwtSecurityToken = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,
